@@ -1,0 +1,112 @@
+/* JOURNAL COVER
+============================================================================= */
+
+/* Choose background and text colors for the banner */
+.quire-cover--journal .quire-cover__banner {
+  background-color: #CF4747;
+}
+.quire-cover--journal .quire-cover__banner * {
+  color: #FFFFFF;
+}
+
+/* Size and position the main elements and manage overflow */
+.quire-cover--journal .quire-cover__overlay {
+  position: inherit;
+  height: calc(70vh - 3rem - 2px);
+  min-height: inherit;
+}
+.quire-cover--journal .quire-cover__overlay.with-content {
+  height: calc(65vh - 3rem - 2px);
+}
+.quire-cover--journal .quire-cover__banner {
+  width: 100%;
+  height: 30vh;
+}
+.quire-cover--journal .quire-cover__banner {
+  padding: 1rem 2rem;
+  overflow: scroll;
+}
+.quire-cover--journal.quire-cover {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Style main elements and half titlepage for PDF output */
+@media print {
+  .quire-cover--journal.quire-cover {
+    overflow: inherit;
+  }
+  .quire-cover--journal .quire-cover__overlay {
+    height: 70%;
+  }
+  .quire-cover--journal .quire-cover__banner {
+    height: 30%;
+  }
+  .half-title-page * {
+    font-size: 1rem !important;
+    color: #000;
+  }
+  .half-title-page {
+    text-align: center;
+    padding: 2in 15% 0 15%;
+  }
+  .half-title-page span {
+    display: inline;
+  }
+  .quire-cover--journal .half-title-page .series_periodical_name {
+    font-weight: normal;
+  }
+  .quire-cover--journal .half-title-page .periodical_pub_info {
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+  }
+  .half-title-page .periodical_title {
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+  .half-title-page .periodical_url {
+    margin-top: 1rem;
+  }
+  .half-title-page .periodical_publisher {
+    margin-top: 2rem;
+  }
+}
+
+/* Style and position the headings and adjust for mobile  */
+.quire-cover--journal .columns {
+  margin: 0;
+  flex-direction: row-reverse;
+}
+.quire-cover--journal .quire-cover__banner .title {
+  font-size: 4rem;
+  text-align: right;
+}
+.quire-cover--journal .series_periodical_name {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+.quire-cover--journal .periodical_pub_info {
+  font-family: "Noto Sans", sans-serif;
+}
+@media screen and (max-width: 440px) {
+  .quire-cover--journal .quire-cover__banner {
+    padding: 1rem;
+  }
+  .quire-cover--journal .quire-cover__banner .title {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .quire-cover--journal .columns {
+    display: block;
+  }
+  .quire-cover--journal .quire-cover__banner .title {
+    text-align: left;
+  }
+  .quire-entry div.side-by-side div.quire-entry__image-wrap,
+  .quire-entry__image figure {
+    height: 60vh;
+  }
+}
+
