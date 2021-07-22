@@ -281,3 +281,8 @@
 #Phil-America .quire-contributor__bio + .quire-contributor__page-link {
   display: block;
 }
+.content .center p {
+  text-align: center;
+  text-align-last: center;
+  margin-bottom: 0;
+}
