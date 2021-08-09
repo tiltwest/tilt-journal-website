@@ -277,12 +277,52 @@
 #Phil-America .quire-contributor__page-link {
   display: none;
 }
-#Rachel-Woolf .quire-contributor__bio + .quire-contributor__page-link,
-#Phil-America .quire-contributor__bio + .quire-contributor__page-link {
-  display: block;
+@media screen {
+  #Rachel-Woolf .quire-contributor__bio + .quire-contributor__page-link,
+  #Phil-America .quire-contributor__bio + .quire-contributor__page-link {
+    display: block;
+  }
+}
+@media print {
+  #america-america_contents .quire-contents-list,
+  #woolf-woolf_contents .quire-contents-list {
+    display: none;
+  }
 }
 .content .center p {
   text-align: center;
   text-align-last: center;
   margin-bottom: 0;
+}
+@media print {
+  .quire-figure.pdf-width-70 {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media print {
+  .quire-entry__image figure .quire-figure__media-fallback .quire-figure__wrapper {
+    width: 5in;
+  }
+}
+/* Add TOC page numbers to section headings as well as page headings */
+.quire-contents-list .section-item {
+  max-width: 90%;
+}
+.quire-contents-list .section-item a::after {
+  content: leader(dotted) ' 'target-counter(attr(href, url), page);
+  margin-left: 6pt;
+  margin-right: -10%;
+  border: 1pt solid transparent;
+}
+
+/* Make video aspect ratio look a little better in the entry image viewer  */
+@media screen and (max-width: 1184px) {
+  .quire-entry__image figure iframe {
+    height: 100%;
+  }
+}
+#shum_landscape .quire-entry__image .leaflet-control-fullscreen, .mfp-content .leaflet-control-fullscreen {
+  display: none;
 }
