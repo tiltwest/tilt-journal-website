@@ -1,0 +1,328 @@
+/* JOURNAL COVER
+============================================================================= */
+
+/* Choose background and text colors for the banner */
+.quire-cover--journal .quire-cover__banner {
+  background-color: #2a3e45;
+}
+.quire-cover--journal .quire-cover__banner * {
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.25rem;
+}
+
+/* Size and position the main elements and manage overflow */
+.quire-cover--journal .quire-cover__overlay {
+  position: inherit;
+  height: calc(75vh - 3rem - 2px);
+  min-height: inherit;
+}
+.quire-cover--journal .quire-cover__overlay.with-content {
+  height: calc(65vh - 3rem - 2px);
+}
+.quire-cover--journal .quire-cover__banner {
+  width: 100%;
+  padding: 1rem 2rem;
+  overflow: scroll;
+  text-align: right;
+}
+.quire-cover--journal .quire-cover__banner .content {
+  max-width: 900px;
+  margin: 30px auto 200px;
+}
+.quire-cover--journal.quire-cover {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Style main elements and half titlepage for PDF output */
+@media print {
+  .quire-cover--journal.quire-cover {
+    overflow: inherit;
+  }
+  .quire-cover--journal .quire-cover__overlay {
+    height: 6in;
+  }
+  .quire-cover--journal .quire-cover__banner {
+    height: 3.5in;
+    padding: 0 .5in;
+  }
+  .quire-cover--journal .quire-cover__banner .content {
+    margin-bottom: 0;
+  }
+  .quire-cover--journal .quire-cover__banner .contributor {
+    padding-left: .5in;
+  }
+  .half-title-page * {
+    font-size: 1rem !important;
+    color: #000;
+  }
+  .half-title-page {
+    text-align: center;
+    padding: 2in 15% 0 15%;
+  }
+  .half-title-page span {
+    display: inline;
+  }
+  .quire-cover--journal .half-title-page .series_periodical_name {
+    font-weight: normal;
+  }
+  .quire-cover--journal .half-title-page .periodical_pub_info {
+    font-family: "Open Sans Condensed", sans-serif;
+  }
+  .half-title-page .periodical_title {
+    font-weight: bold;
+    margin-top: 2rem;
+  }
+  .half-title-page .periodical_url {
+    margin-top: 1rem;
+  }
+  .half-title-page .periodical_publisher {
+    margin-top: 2rem;
+  }
+}
+
+/* Style and position the headings and adjust for mobile  */
+.quire-cover--journal .columns {
+  margin: 0;
+  flex-direction: row-reverse;
+}
+.quire-cover--journal .quire-cover__banner .title {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 4.5rem;
+}
+.quire-cover--journal .series_periodical_name {
+  margin-top: 2rem;
+  margin-bottom: 0 !important;
+}
+@media screen and (max-width: 440px) {
+  .quire-cover--journal .quire-cover__banner {
+    padding: 1rem;
+  }
+  .quire-cover--journal .quire-cover__banner .title {
+    font-size: 3rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .quire-cover--journal .columns {
+    display: block;
+  }
+  .quire-entry div.side-by-side div.quire-entry__image-wrap,
+  .quire-entry__image figure {
+    height: 60vh;
+  }
+}
+
+/* Put masthead in two columns on About page */
+.column-a,
+.column-b {
+  width: 50%;
+  text-align: center;
+  display: inline-block;
+}
+.column-b {
+  float: right;
+}
+
+@media print {
+
+  /* Style masthead page */
+  .quire-page--masthead {
+    page: no-footer;
+    padding-top: .5in;
+  }
+  .quire-page--masthead .quire-page__header.hero {
+    display: none;
+  }
+  .quire-page--masthead .quire-page__content .container .content .backmatter {
+    text-align: center;
+    font-family: "Open Sans Condensed", sans-serif;
+  }
+
+}
+
+/* SPECIFIC STYLES FOR ISSUE 2
+============================================================================= */
+/* Custom setting for Dujie Tahat poem */
+.content .tahat-poem {
+  width: 22rem;
+  margin: 0 auto 3rem;
+}
+.content .tahat-poem p {
+  text-align: justify;
+  text-align-last: justify;
+  margin-bottom: 0;
+}
+.content .attribution p {
+  text-align: right;
+  text-align-last: right;
+  margin-bottom: 0;
+}
+.quire-contents-list .menu-list a {
+    color: #333333;
+    font-family: "Open Sans", sans-serif;
+    position: relative;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.25em;
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+}
+@media print {
+  .quire-contents-list .menu-list a {
+    font-size: 8.5pt;
+  }
+}
+.quire-page__header__contributor {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 3rem;
+    opacity: 0.75;
+    font-size: 1.2em;
+}
+.quire-page__content .container .content p {
+    line-height: 1.8;
+}
+.quire-page__content {
+    font-family: "Tinos", serif;
+    font-size: 1em;
+    line-height: 1.78;
+    font-weight: 400;
+    padding-top: 0;
+    padding-bottom: 0;
+    position: relative;
+    -webkit-animation: 0.5s ease 0s 1 slideFromRight;
+    animation: 0.5s ease 0s 1 slideFromRight;
+    color: #333333;
+    font-size: 1.1em;
+    font-weight: 400;
+    line-height: 1.6;
+}
+.quire-page__content .container .content ul li:before {
+    content: "-";
+    font-size: 0.875rem;
+    display: block;
+    float: left;
+    width: 1em;
+    margin-left: -1.3em;
+    box-sizing: border-box;
+    vertical-align: text-top;
+}
+.quire-menu {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.25;
+}
+.quire-menu .page-item a, .quire-menu .section-item a {
+    font-family: "Open Sans", sans-serif;
+}
+.quire-entry h1 {
+    font-size: 2.5em;
+    line-height: 1.2;
+    font-weight: 400;
+}
+.quire-entry__tombstone tr td:first-child {
+    font-weight: 700;
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    color: #cb9966;
+    font-size: 0.9em;
+}
+.quire-entry__tombstone .table {
+    width: 90.5%;
+    margin: 0 auto;
+    padding-bottom: 1em;
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 1em;
+}
+.content figure .quire-figure__caption {
+    font-family: "Open Sans", sans-serif;
+    font-size: 0.75em;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    font-style: normal;
+    text-align: left;
+    color: #333333;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+.content h3:not(:first-child) {
+  font-family: "Open Sans", sans-serif;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  color: #cb9966;
+  font-size: 1em;
+  font-weight: 600;
+  font-style: normal;
+}
+.quire-cover {
+  counter-reset: page -1;
+}
+.half-title-page {
+  page-break-before: right;
+}
+.shimson-santo-indent {
+  margin-left: 2rem;
+}
+.shimson-santo-indent-more {
+  margin-left: 3rem;
+}
+#Rachel-Woolf .quire-contributor__page-link,
+#Phil-America .quire-contributor__page-link {
+  display: none;
+}
+@media screen {
+  #Rachel-Woolf .quire-contributor__bio + .quire-contributor__page-link,
+  #Phil-America .quire-contributor__bio + .quire-contributor__page-link {
+    display: block;
+  }
+}
+@media print {
+  #america-america_contents .quire-contents-list,
+  #woolf-woolf_contents .quire-contents-list {
+    display: none;
+  }
+}
+.content .center p {
+  text-align: center;
+  text-align-last: center;
+  margin-bottom: 0;
+}
+@media print {
+  .quire-figure.pdf-width-70 {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media print {
+  .quire-entry__image figure .quire-figure__media-fallback .quire-figure__wrapper {
+    width: 5in;
+  }
+}
+/* Add TOC page numbers to section headings as well as page headings */
+.quire-contents-list .section-item {
+  max-width: 90%;
+}
+.quire-contents-list .section-item a::after {
+  content: leader(dotted) ' 'target-counter(attr(href, url), page);
+  margin-left: 6pt;
+  margin-right: -10%;
+  border: 1pt solid transparent;
+}
+
+/* Make video aspect ratio look a little better in the entry image viewer  */
+@media screen and (max-width: 1184px) {
+  .quire-entry__image figure iframe {
+    height: 100%;
+  }
+}
+#shum_landscape .quire-entry__image .leaflet-control-fullscreen, .mfp-content .leaflet-control-fullscreen {
+  display: none;
+}
